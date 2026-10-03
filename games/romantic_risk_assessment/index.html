@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Romantic Risk Assessment — a chat-based Python game about whether you should confess to your crush.">
+  <title>To Tell or Not to Tell — softlaunch.exe</title>
+
+  <!-- Shared site styling -->
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- Game-only styling -->
+  <link rel="stylesheet" href="romantic_risk_assessment.css">
+</head>
+<body class="game-page">
+  <div class="site-shell">
+    <header class="topbar window">
+      <div class="brand">
+        <span class="status-light"></span>
+        <a href="../../index.html">softlaunch.exe</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        menu.exe
+      </button>
+
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="../../index.html">home</a>
+        <a class="active" href="../../games.html">arcade</a>
+        <a href="../../playlists.html">playlists</a>
+        <!-- Replace # with your YouTube URL -->
+        <a href="#" target="_blank" rel="noreferrer">youtube ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="game-intro">
+        <p class="eyebrow">ARCADE / ROMANCE DEPARTMENT / </p>
+        <h1>romantic risk assessment</h1>
+        <p>
+          You have a crush. Your bestie has opinions. This will either clarify everything or make it significantly worse.
+        </p>
+	<p> 
+	DISCLAIMER: The decision tree and answers for this game were adapted from Oddly Specific Crystal's YouTube video <a href="https://www.youtube.com/watch?v=hpwyjcd3Ioc">'Should You Tell Your Crush You Like Them (ODDLY SPECIFIC)</a>. I was only involved in adapting its content into this game.
+	</p>
+      </section>
+
+      <section class="game-stage window" aria-labelledby="game-window-title">
+        <div class="window-bar">
+          <span id="game-window-title">romantic_risk_assessment.exe</span>
+          <div class="game-window-status">
+            <span class="tiny-led" aria-hidden="true"></span>
+            <span id="runtime-status">loading python...</span>
+          </div>
+        </div>
+
+        <div class="game-stage-body">
+          <aside class="game-sidebar" aria-label="Game information">
+            <div class="game-sticker">★ advice engine ★</div>
+            <h2>should you tell them?</h2>
+            <p>
+              Answer the questions. Your bestie will do the rest.
+            </p>
+
+            <dl class="game-facts">
+              <div>
+                <dt>genre</dt>
+                <dd>romantic crisis simulator</dd>
+              </div>
+              <div>
+                <dt>engine</dt>
+                <dd>Python + Pyodide</dd>
+              </div>
+              <div>
+                <dt>data</dt>
+                <dd>stays in your browser</dd>
+              </div>
+            </dl>
+
+            <a class="text-link" href="../../games.html">← back to arcade</a>
+          </aside>
+
+          <div class="phone-wrap">
+            <div class="phone-shell">
+              <div class="phone-status" aria-hidden="true">
+                <span id="phone-time">9:41</span>
+                <span>●●● ᯤ ▰</span>
+              </div>
+
+              <div class="chat-header">
+                <div class="bestie-avatar" aria-hidden="true">★</div>
+                <div class="contact-copy">
+                  <strong>bestie</strong>
+                  <span><i class="online-dot"></i> online · has thoughts</span>
+                </div>
+                <button class="icon-button" id="restart-button" type="button" aria-label="Restart game" title="Restart game">
+                  ↻
+                </button>
+              </div>
+
+              <div
+                id="chat-log"
+                class="chat-log"
+                role="log"
+                aria-live="polite"
+                aria-relevant="additions"
+                aria-label="Conversation with bestie"
+              ></div>
+
+              <div id="typing-indicator" class="typing-row" hidden aria-label="Bestie is typing">
+                <div class="message-avatar mini" aria-hidden="true">★</div>
+                <div class="typing-bubble">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <div class="interaction-zone">
+                <div id="input-error" class="input-error" role="alert" hidden></div>
+                <div id="interaction-panel" class="interaction-panel" aria-label="Your responses"></div>
+              </div>
+
+              <div id="load-overlay" class="load-overlay">
+                <div class="loader-pixel" aria-hidden="true">♥</div>
+                <p id="load-title">loading bestie.exe...</p>
+                <span>initializing questionable decisions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy-note">
+        <span>LOCAL MODE</span>
+        <p>
+          The story logic runs as Python in your browser. Your answers are not sent to a server.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>made with unnecessary emotional investment.</p>
+      <p class="small">© <span id="year"></span> anonymous internet person</p>
+    </footer>
+  </div>
+
+  <!-- Pyodide runs the Python game logic entirely in the browser. -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js"></script>
+
+  <!-- Existing site navigation behavior -->
+  <script src="../../js/main.js"></script>
+
+  <!-- Game UI / Python bridge -->
+  <script src="romantic_risk_assessment.js"></script>
+</body>
+</html>
