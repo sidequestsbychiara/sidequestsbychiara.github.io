@@ -1,4 +1,4 @@
-"""To Tell or Not to Tell — browser game logic.
+"""Romantic Risk Assessment — browser game logic.
 
 The original game was a deeply nested input()/print() decision tree.
 This refactor keeps the story outcomes and most question wording intact,
@@ -19,8 +19,9 @@ def choice(label: str, value: str, next_node: str) -> dict[str, str]:
 NODES: dict[str, dict[str, Any]] = {
     "start": {
         "messages": [
-            "Welcome to 'To Tell or Not to Tell', the online service which tells you whether you should tell your crush you like them.",
-            "Let's start with a simple question: Is your crush seeing someone?",
+            "So, you're experiencing the terribly embarrassing feeling of having a crush on somebody, and now you're faced with the dilemma of whether you should tell them...",
+            "My condolences.",
+            "First things first: Is your crush seeing someone?",
         ],
         "choices": [
             choice("Yes", "A", "seeing_type"),
